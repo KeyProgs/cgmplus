@@ -8,9 +8,9 @@ import  UsersList from './UsersList'
 
 let user : userInterface = {id:1,userName :'jOKerr',admin:true};
 let  users =[
-    'Benomar',
-    'Kadri',
-    'Bouchikhi',
+    'Benomar Mohammed',
+    'Kadri Nezha',
+    'Bouchikhi Abdullah',
 ];
 let usersObject=users.map((user,key)=>({id:key,userName:user,admin:false}));
 
