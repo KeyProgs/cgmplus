@@ -4,6 +4,11 @@ import HelloWorld from './HelloWorld'
 import userInterface from "./interfaces/UserInterface";
 import  UsersList from './UsersList'
 
+import { Admin, Resource } from 'react-admin';
+import restProvider from 'ra-data-simple-rest';
+import { PostList, PostEdit, PostCreate, PostIcon } from './posts';
+
+
 
 
 let user : userInterface = {id:1,userName :'jOKerr',admin:true};
@@ -35,13 +40,9 @@ function App() {
 
 
     return (
-        <div className="App">
-
-            <HelloWorld userProfile={user} />
-            <UsersList users={usersObject}/>
-
-
-        </div>
+        <Admin dataProvider={restProvider('http://localhost:3000')}>
+        <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
+    </Admin>
     );
 }
 
